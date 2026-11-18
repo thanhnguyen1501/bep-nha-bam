@@ -1,0 +1,158 @@
+:root {
+      --bg-primary: #f5f0e8;
+      --bg-secondary: #ebe3d5;
+      --bg-card: #fcfaf6;
+      --text-primary: #1c1613;
+      --text-secondary: #5c4e43;
+      --accent-terracotta: #b84a27;
+      --accent-gold: #c89d54;
+      --accent-leaf: #234230;
+      --border-line: rgba(28, 22, 19, 0.11);
+    }
+    body.theme-dark {
+      --bg-primary: #120f0d;
+      --bg-secondary: #1b1613;
+      --bg-card: #211b17;
+      --text-primary: #f4efe6;
+      --text-secondary: #b5a695;
+      --accent-terracotta: #d96b43;
+      --accent-gold: #d4af6a;
+      --accent-leaf: #3b6e52;
+      --border-line: rgba(244, 239, 230, 0.12);
+    }
+
+    body {
+      font-family: 'Be Vietnam Pro', sans-serif;
+      background-color: var(--bg-primary);
+      color: var(--text-primary);
+      transition: background-color 0.35s ease, color 0.35s ease;
+      overflow-x: clip;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .font-editorial {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+    }
+    .theme-surface {
+      background-color: var(--bg-secondary);
+      border-color: var(--border-line);
+      color: var(--text-primary);
+    }
+    select.theme-surface option {
+      background-color: var(--bg-card);
+      color: var(--text-primary);
+    }
+    .theme-card {
+      background-color: var(--bg-card);
+      border-color: var(--border-line);
+      color: var(--text-primary);
+    }
+    .theme-text-muted {
+      color: var(--text-secondary);
+    }
+    .theme-border {
+      border-color: var(--border-line);
+    }
+
+    /* Mobile-safe WebGL Canvas */
+    #hero-3d-canvas {
+      touch-action: pan-y pinch-zoom;
+      -webkit-user-select: none;
+      user-select: none;
+      cursor: grab;
+    }
+    #hero-3d-canvas:active {
+      cursor: grabbing;
+    }
+
+    /* 3D Parallax Storyboard */
+    .motion-parallax-stage {
+      perspective: 1400px;
+      transform-style: preserve-3d;
+    }
+    .ingredient-layer {
+      transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.35s ease;
+      will-change: transform, opacity;
+    }
+    .story-step-btn.is-active {
+      border-left-color: #b84a27;
+      background-color: var(--bg-card);
+      box-shadow: 0 8px 24px rgba(22, 18, 14, 0.08);
+    }
+
+    /* Responsive Editorial Grid (Desktop 12-col asymmetric, Mobile clean 1-col / Tablet 2-col) */
+    .bam-editorial-menu-grid {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: clamp(16px, 2.2vw, 30px);
+      align-items: stretch;
+    }
+    .bam-dish-card {
+      grid-column: span 4;
+      position: relative;
+      border-radius: 0.85rem;
+      overflow: hidden;
+      border: 1px solid var(--border-line);
+      background-color: var(--bg-card);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform 0.25s ease, box-shadow 0.3s ease;
+    }
+    .bam-dish-card.is-signature-wide {
+      grid-column: span 7;
+    }
+    .bam-dish-card.is-signature-side {
+      grid-column: span 5;
+    }
+    @media (max-width: 1024px) {
+      .bam-dish-card,
+      .bam-dish-card.is-signature-wide,
+      .bam-dish-card.is-signature-side {
+        grid-column: span 6;
+      }
+    }
+    @media (max-width: 640px) {
+      .bam-dish-card,
+      .bam-dish-card.is-signature-wide,
+      .bam-dish-card.is-signature-side {
+        grid-column: span 12;
+      }
+    }
+
+    .reel-progress-bar {
+      transition: width 0.1s linear;
+    }
+
+    /* Warm Toned Leaflet Map */
+    .leaflet-container {
+      font-family: 'Be Vietnam Pro', sans-serif;
+      z-index: 10;
+      background-color: #ebe3d5;
+    }
+    .leaflet-tile-pane {
+      filter: sepia(0.45) saturate(0.8) contrast(1.04) brightness(0.96) hue-rotate(-8deg);
+    }
+    body.theme-dark .leaflet-tile-pane {
+      filter: invert(0.92) hue-rotate(180deg) brightness(0.9) contrast(0.9);
+    }
+
+    /* Admin Dark Dashboard Styles (Maxton-inspired) */
+    #admin-app {
+      background-color: #0f121a;
+      color: #e2e8f0;
+      min-height: 100vh;
+    }
+    .admin-card {
+      background-color: #161a26;
+      border: 1px solid rgba(255, 255, 255, 0.07);
+      border-radius: 0.75rem;
+    }
+    .admin-sidebar {
+      background-color: #131722;
+      border-right: 1px solid rgba(255, 255, 255, 0.07);
+    }
+    .admin-nav-item.is-active {
+      background: linear-gradient(90deg, rgba(59, 130, 246, 0.18), rgba(59, 130, 246, 0.03));
+      color: #60a5fa;
+      border-left: 3px solid #3b82f6;
+    }
