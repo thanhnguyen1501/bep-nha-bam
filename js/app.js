@@ -1069,18 +1069,11 @@
     // =========================================================================
     // 7. MAP & ADMIN DASHBOARD LOGIC (/admin & #/admin)
     // =========================================================================
-    let canthoMap = null;
-    const BAM_COORDS = [10.0476198, 105.7577024];
+const BAM_MAP_EMBED_URL = "https://maps.google.com/maps?q=10.0476198,105.7577024&hl=vi&z=17&output=embed";
 
     function initMap() {
       const mapEl = document.getElementById("cantho-map");
-      if (!mapEl || typeof L === "undefined") return;
-      canthoMap = L.map("cantho-map", { center: BAM_COORDS, zoom: 16, scrollWheelZoom: false });
-      L.tileLayer("https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}", {
-        attribution: "&copy; Esri &mdash; Bếp Nhà Bam",
-        maxZoom: 19
-      }).addTo(canthoMap);
-      L.marker(BAM_COORDS).addTo(canthoMap).bindPopup("<b>Bếp Nhà Bam</b><br>37 Phạm Ngọc Hưng, Bình Thủy, Cần Thơ").openPopup();
+        if (!mapEl) return; if (!mapEl.getAttribute("src")) mapEl.src = BAM_MAP_EMBED_URL; document.getElementById("recenter-map-btn")?.addEventListener("click", () => { mapEl.src = BAM_MAP_EMBED_URL; });
     }
 
     function applyShopSettingsToUI() {
@@ -1401,7 +1394,6 @@
         if (navigator.clipboard) navigator.clipboard.writeText(addr).catch(() => {});
         showToast("Đã sao chép địa chỉ quán");
       });
-      document.getElementById("recenter-map-btn")?.addEventListener("click", () => canthoMap?.setView(BAM_COORDS, 17, { animate: true }));
 
       // Admin Login & Events
       document.getElementById("admin-login-form")?.addEventListener("submit", (e) => {
