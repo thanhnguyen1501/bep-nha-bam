@@ -74,15 +74,15 @@
     ];
 
     const DEFAULT_MENU_ITEMS = [
-      { id: "bun-thit-nuong", name: "Bún Thịt Nướng", category: "savory_bun", categoryLabel: "Bún Tươi", price: 25000, unit: "phần", available: true, image: "assets/images/opt_ed_bun_thit_nuong.jpg", shortDesc: "Thịt ba rọi ướp sả tỏi nướng than thơm phức, ăn cùng bún tươi, rau sống lặt sạch, đồ chua giòn và đậu phộng rang." },
-      { id: "banh-tam-bi-xiu-mai", name: "Bánh Tằm Bì Xíu Mại", category: "savory_banh", categoryLabel: "Bánh Tằm & Bánh Hỏi", price: 25000, unit: "phần", available: true, image: "assets/images/opt_ed_banh_tam_bi_xiu_mai.jpg", shortDesc: "Sợi bánh tằm mềm dẻo chan nước cốt dừa thắng béo dịu, ăn kèm bì thính, viên xíu mại mềm ngọt và nước mắm tỏi ớt." },
-      { id: "bun-bi-thit-khia", name: "Bún Bì Thịt Khìa", category: "savory_bun", categoryLabel: "Bún Tươi", price: 25000, unit: "phần", available: true, image: "assets/images/opt_ed_bun_bi_thit_khia.jpg", shortDesc: "Thịt heo khìa nước dừa tươi mềm thấm vị, trộn cùng bì thính thơm bùi, rau thơm, đồ chua và nước mắm pha kẹo." },
-      { id: "banh-hoi-thit-khia", name: "Bánh Hỏi Thịt Khìa", category: "savory_banh", categoryLabel: "Bánh Tằm & Bánh Hỏi", price: 35000, unit: "phần", available: true, image: "assets/images/opt_ed_banh_hoi_thit_khia.jpg", shortDesc: "Xấp bánh hỏi mịn thoa mỡ hành xanh óng, ăn kèm thịt khìa nước dừa mềm ngọt, rau sống và nước mắm chua ngọt." },
-      { id: "banh-hoi-thit-nuong", name: "Bánh Hỏi Thịt Nướng", category: "savory_banh", categoryLabel: "Bánh Tằm & Bánh Hỏi", price: 35000, unit: "phần", available: true, image: "assets/images/opt_ed_banh_hoi_thit_nuong.jpg", shortDesc: "Bánh hỏi thoa mỡ hành thơm dịu, dùng kèm thịt ba rọi nướng lửa than vàng ươm, đồ chua giòn và nước mắm pha." },
-      { id: "bun-thit-xao", name: "Bún Thịt Xào", category: "savory_bun", categoryLabel: "Bún Tươi", price: 25000, unit: "phần", available: true, image: "assets/images/opt_ed_bun_thit_xao.jpg", shortDesc: "Thịt ba rọi xào sả hành nóng hổi trên lửa lớn cho dậy mùi thơm, xếp lên tô bún tươi đầy rau sống, giá giòn và đậu phộng." },
-      { id: "bun-cha-gio", name: "Bún Chả Giò", category: "savory_bun", categoryLabel: "Bún Tươi", price: 25000, unit: "phần", available: true, image: "assets/images/opt_ed_bun_cha_gio.jpg", shortDesc: "Chả giò cuốn nhân thịt khoai môn chiên vàng giòn rụm, ăn cùng bún tươi, rau sống, đồ chua và nước mắm chua ngọt." },
-      { id: "banh-bo", name: "Bánh Bò", category: "cake_sweet", categoryLabel: "Bánh Quê", price: 10000, unit: "phần", available: true, image: "assets/images/opt_ed_banh_bo.jpg", shortDesc: "Bánh bò hấp rễ tre bông xốp, vị ngọt thanh không gắt, chấm hoặc chan ngập nước cốt dừa thắng béo kèm mè rang." },
-      { id: "banh-chuoi", name: "Bánh Chuối", category: "cake_sweet", categoryLabel: "Bánh Quê", price: 10000, unit: "phần", available: true, image: "assets/images/opt_ed_banh_chuoi.jpg", shortDesc: "Chuối sứ chín hấp dẻo thơm, cắt miếng vừa ăn, chan nước cốt dừa thắng mặn ngọt và rắc mè vàng thơm bùi." }
+      { id: "bun-thit-nuong", name: "Bún Thịt Nướng", category: "bun", categoryLabel: "Bún", price: 25000, unit: "phần", available: true, image: "assets/images/opt_ed_bun_thit_nuong.jpg", shortDesc: "Thịt ba rọi ướp sả tỏi nướng than thơm phức, ăn cùng bún tươi, rau sống lặt sạch, đồ chua giòn và đậu phộng rang." },
+      { id: "banh-tam-bi-xiu-mai", name: "Bánh Tằm Bì Xíu Mại", category: "banh_tam", categoryLabel: "Bánh tằm", price: 25000, unit: "phần", available: true, image: "assets/images/opt_ed_banh_tam_bi_xiu_mai.jpg", shortDesc: "Sợi bánh tằm mềm dẻo chan nước cốt dừa thắng béo dịu, ăn kèm bì thính, viên xíu mại mềm ngọt và nước mắm tỏi ớt." },
+      { id: "bun-bi-thit-khia", name: "Bún Bì Thịt Khìa", category: "bun", categoryLabel: "Bún", price: 25000, unit: "phần", available: true, image: "assets/images/opt_ed_bun_bi_thit_khia.jpg", shortDesc: "Thịt heo khìa nước dừa tươi mềm thấm vị, trộn cùng bì thính thơm bùi, rau thơm, đồ chua và nước mắm pha kẹo." },
+      { id: "banh-hoi-thit-khia", name: "Bánh Hỏi Thịt Khìa", category: "banh_hoi", categoryLabel: "Bánh hỏi", price: 35000, unit: "phần", available: true, image: "assets/images/opt_ed_banh_hoi_thit_khia.jpg", shortDesc: "Xấp bánh hỏi mịn thoa mỡ hành xanh óng, ăn kèm thịt khìa nước dừa mềm ngọt, rau sống và nước mắm chua ngọt." },
+      { id: "banh-hoi-thit-nuong", name: "Bánh Hỏi Thịt Nướng", category: "banh_hoi", categoryLabel: "Bánh hỏi", price: 35000, unit: "phần", available: true, image: "assets/images/opt_ed_banh_hoi_thit_nuong.jpg", shortDesc: "Bánh hỏi thoa mỡ hành thơm dịu, dùng kèm thịt ba rọi nướng lửa than vàng ươm, đồ chua giòn và nước mắm pha." },
+      { id: "bun-thit-xao", name: "Bún Thịt Xào", category: "bun", categoryLabel: "Bún", price: 25000, unit: "phần", available: true, image: "assets/images/opt_ed_bun_thit_xao.jpg", shortDesc: "Thịt ba rọi xào sả hành nóng hổi trên lửa lớn cho dậy mùi thơm, xếp lên tô bún tươi đầy rau sống, giá giòn và đậu phộng." },
+      { id: "bun-cha-gio", name: "Bún Chả Giò", category: "bun", categoryLabel: "Bún", price: 25000, unit: "phần", available: true, image: "assets/images/opt_ed_bun_cha_gio.jpg", shortDesc: "Chả giò cuốn nhân thịt khoai môn chiên vàng giòn rụm, ăn cùng bún tươi, rau sống, đồ chua và nước mắm chua ngọt." },
+      { id: "banh-bo", name: "Bánh Bò", category: "banh_dan_gian", categoryLabel: "Bánh dân gian", price: 10000, unit: "phần", available: true, image: "assets/images/opt_ed_banh_bo.jpg", shortDesc: "Bánh bò hấp rễ tre bông xốp, vị ngọt thanh không gắt, chấm hoặc chan ngập nước cốt dừa thắng béo kèm mè rang." },
+      { id: "banh-chuoi", name: "Bánh Chuối", category: "banh_dan_gian", categoryLabel: "Bánh dân gian", price: 10000, unit: "phần", available: true, image: "assets/images/opt_ed_banh_chuoi.jpg", shortDesc: "Chuối sứ chín hấp dẻo thơm, cắt miếng vừa ăn, chan nước cốt dừa thắng mặn ngọt và rắc mè vàng thơm bùi." }
     ];
 
 
@@ -698,8 +698,8 @@
       if (!grid) return;
 
       const items = getMenuItems().filter((m) => m.available !== false);
-      const categoryLabels = { all: "Tất cả", savory_bun: "Bún Tươi", savory_banh: "Bánh Tằm & Bánh Hỏi", cake_sweet: "Bánh Quê" };
-  const categoryCounts = { all: items.length, savory_bun: items.filter((m) => m.category === "savory_bun").length, savory_banh: items.filter((m) => m.category === "savory_banh").length, cake_sweet: items.filter((m) => m.category === "cake_sweet").length };
+      const categoryLabels = { all: "Tất cả", bun: "Bún", banh_hoi: "Bánh hỏi", banh_tam: "Bánh tằm", banh_dan_gian: "Bánh dân gian" };
+  const categoryCounts = { all: items.length, bun: items.filter((m) => m.category === "bun").length, banh_hoi: items.filter((m) => m.category === "banh_hoi").length, banh_tam: items.filter((m) => m.category === "banh_tam").length, banh_dan_gian: items.filter((m) => m.category === "banh_dan_gian").length };
   document.querySelectorAll("#category-filter-bar [data-cat]").forEach((btn) => { const cat = btn.getAttribute("data-cat"); if (cat && categoryLabels[cat]) btn.textContent = categoryLabels[cat] + " (" + (categoryCounts[cat] ?? 0) + ")"; });
   const q = state.searchQuery.trim().toLowerCase();
       const filtered = items.filter((item) => {
@@ -1674,7 +1674,7 @@
       const sweetJumpBtn = document.getElementById('banner-sweet-jump');
       if (sweetJumpBtn) {
         sweetJumpBtn.addEventListener('click', () => {
-          const sweetCatBtn = document.querySelector('.cat-btn[data-cat="cake_sweet"]');
+          const sweetCatBtn = document.querySelector('.cat-btn[data-cat="banh_dan_gian"]');
           if (sweetCatBtn) sweetCatBtn.click();
         });
       }
