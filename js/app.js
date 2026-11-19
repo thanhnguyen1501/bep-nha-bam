@@ -698,8 +698,8 @@
       if (!grid) return;
 
       const items = getMenuItems().filter((m) => m.available !== false);
-      const categoryLabels = { all: "Tất cả", bun: "Bún", banh_hoi: "Bánh hỏi", banh_tam: "Bánh tằm", banh_dan_gian: "Bánh dân gian" };
-  const categoryCounts = { all: items.length, bun: items.filter((m) => m.category === "bun").length, banh_hoi: items.filter((m) => m.category === "banh_hoi").length, banh_tam: items.filter((m) => m.category === "banh_tam").length, banh_dan_gian: items.filter((m) => m.category === "banh_dan_gian").length };
+      const categoryLabels = { all: "Tất cả", bun: "Bún", banh_hoi: "Bánh hỏi", banh_tam: "Bánh tằm", banh_dan_gian: "Bánh dân gian", thuc_uong: "Thức uống" };
+  const categoryCounts = { all: items.length, bun: items.filter((m) => m.category === "bun").length, banh_hoi: items.filter((m) => m.category === "banh_hoi").length, banh_tam: items.filter((m) => m.category === "banh_tam").length, banh_dan_gian: items.filter((m) => m.category === "banh_dan_gian").length, thuc_uong: items.filter((m) => m.category === "thuc_uong").length };
   document.querySelectorAll("#category-filter-bar [data-cat]").forEach((btn) => { const cat = btn.getAttribute("data-cat"); if (cat && categoryLabels[cat]) btn.textContent = categoryLabels[cat] + " (" + (categoryCounts[cat] ?? 0) + ")"; });
   const q = state.searchQuery.trim().toLowerCase();
       const filtered = items.filter((item) => {
