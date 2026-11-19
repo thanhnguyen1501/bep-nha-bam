@@ -755,8 +755,8 @@
     // =========================================================================
 
     // Tọa độ Bếp Nhà Bam: 37 Phạm Ngọc Hưng, Phường Bình Thủy, TP. Cần Thơ
-    const SHOP_LAT = 10.0592;
-    const SHOP_LNG = 105.7645;
+    const SHOP_LAT = 10.0476198;
+    const SHOP_LNG = 105.7577024;
     let lastGeneratedZaloMsg = "";
 
     function haversineKm(lat1, lon1, lat2, lon2) {
@@ -1070,7 +1070,7 @@
     // 7. MAP & ADMIN DASHBOARD LOGIC (/admin & #/admin)
     // =========================================================================
     let canthoMap = null;
-    const BAM_COORDS = [10.0592, 105.7645];
+    const BAM_COORDS = [10.0476198, 105.7577024];
 
     function initMap() {
       const mapEl = document.getElementById("cantho-map");
