@@ -698,7 +698,10 @@
       if (!grid) return;
 
       const items = getMenuItems().filter((m) => m.available !== false);
-      const q = state.searchQuery.trim().toLowerCase();
+      const categoryLabels = { all: "Tất cả", savory_bun: "Bún Tươi", savory_banh: "Bánh Tằm & Bánh Hỏi", cake_sweet: "Bánh Quê" };
+  const categoryCounts = { all: items.length, savory_bun: items.filter((m) => m.category === "savory_bun").length, savory_banh: items.filter((m) => m.category === "savory_banh").length, cake_sweet: items.filter((m) => m.category === "cake_sweet").length };
+  document.querySelectorAll("#category-filter-bar [data-cat]").forEach((btn) => { const cat = btn.getAttribute("data-cat"); if (cat && categoryLabels[cat]) btn.textContent = categoryLabels[cat] + " (" + (categoryCounts[cat] ?? 0) + ")"; });
+  const q = state.searchQuery.trim().toLowerCase();
       const filtered = items.filter((item) => {
         const matchCat = state.category === "all" || item.category === state.category;
         const matchQuery = !q || item.name.toLowerCase().includes(q) || item.shortDesc.toLowerCase().includes(q);
