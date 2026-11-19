@@ -1618,6 +1618,8 @@
           s.classList.toggle('opacity-100', isActive);
           s.classList.toggle('opacity-0', !isActive);
           s.classList.toggle('pointer-events-none', !isActive);
+           s.classList.toggle('z-10', isActive);
+           s.classList.toggle('z-0', !isActive); 
         });
         dots.forEach((d, i) => {
           const isActive = i === activeIdx;
