@@ -217,18 +217,18 @@
               }
               opt.value = val;
               opt.textContent = fee === 0
-                ? `Vị trí GPS: ~${roadKm.toFixed(2)} km (< 1 km) — Miễn phí ship`
-                : `Vị trí GPS: ~${roadKm.toFixed(1)} km — ${formatVND(fee)}`;
+                ? `Vị trí hiện tại: ~${roadKm.toFixed(2)} km (< 1 km) — Freeship`
+                : `Vị trí hiện tại: ~${roadKm.toFixed(1)} km — ${formatVND(fee)}`;
               distSel.value = val;
             }
             if (noteEl) noteEl.textContent = fee === 0
-              ? `Cách quán khoảng ${roadKm.toFixed(2)} km (dưới 1 km) — được miễn phí ship.`
+              ? `Cách quán khoảng ${roadKm.toFixed(2)} km (dưới 1 km) — freeship nhé.`
               : `Cách quán khoảng ${roadKm.toFixed(1)} km — phí ship dự kiến ${formatVND(fee)}.`;
             updateCartTotalsUI();
           },
           () => {
-            if (noteEl) noteEl.textContent = "Không lấy được GPS. Bạn vui lòng chọn khoảng cách thủ công ở ô trên.";
-            showToast("Vui lòng cấp quyền vị trí hoặc chọn khoảng cách thủ công.");
+            if (noteEl) noteEl.textContent = "Chưa lấy được vị trí, bạn chọn khoảng cách ở ô trên giúp quán nhé.";
+            showToast("Bạn bật quyền vị trí hoặc chọn khoảng cách ở trên nhé.");
           },
           { enableHighAccuracy: true, timeout: 8000 }
         );
@@ -888,7 +888,7 @@
       const cleanCustPhone = custPhone.replace(/\D/g, "");
       const phoneErrEl = document.getElementById("cust-phone-error");
       if (!custName) {
-        showToast("Vui lòng nhập tên của bạn để quán ghi nhận đơn.");
+        showToast("Bạn nhập tên người nhận giúp quán nhé.");
         return;
       }
       if (!/^0\d{9}$/.test(cleanCustPhone)) {
@@ -898,13 +898,13 @@
       }
       phoneErrEl?.classList.add("hidden");
       if (custType === "Giao tận nơi" && !custStreet) {
-        showToast("Vui lòng nhập số nhà, tên đường để quán giao tận nơi chính xác.");
+        showToast("Bạn nhập giúp quán số nhà, tên đường để giao cho chuẩn nhé.");
         document.getElementById("cust-address")?.focus();
         return;
       }
       const policyAgreeEl = document.getElementById("cust-policy-agree");
       if (policyAgreeEl && !policyAgreeEl.checked) {
-        showToast("Bạn vui lòng tích đồng ý Chính sách giao nhận & Bảo vệ dữ liệu trước khi gửi đơn.");
+        showToast("Bạn tích đồng ý Chính sách & Điều kiện giao nhận giúp quán trước khi gửi đơn nhé.");
         policyAgreeEl.focus();
         return;
       }
@@ -923,7 +923,7 @@
         showToast("Các món trong giỏ hiện đã tạm hết, vui lòng chọn món khác.");
         return;
       }
-      const custPayment = document.getElementById("cust-payment")?.value || "Thanh toán tiền mặt (COD)";
+      const custPayment = document.getElementById("cust-payment")?.value || "Trả tiền mặt khi nhận món";
 
       const orderId = "BAM-" + String(Math.floor(1000 + Math.random() * 9000));
       const nowStr = new Date().toLocaleString("vi-VN", { hour12: false });
