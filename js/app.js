@@ -1097,7 +1097,7 @@ const BAM_MAP_EMBED_URL = "https://maps.google.com/maps?q=10.0476198,105.7577024
       } else {
         adminEl.classList.add("hidden");
         storeEl.classList.remove("hidden");
-        if (canthoMap) setTimeout(() => canthoMap.invalidateSize(), 150);
+        // Google Maps iframe resizes automatically
       }
     }
 
