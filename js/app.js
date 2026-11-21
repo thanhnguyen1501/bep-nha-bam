@@ -1232,8 +1232,8 @@ const BAM_MAP_EMBED_URL = "https://maps.google.com/maps?q=10.0476198,105.7577024
         state.category = btn.getAttribute("data-cat") || "all";
         document.querySelectorAll(".cat-btn").forEach((b) => {
           b.className = b === btn
-            ? "cat-btn px-3.5 py-2 rounded-lg text-xs font-semibold bg-[#1c1613] text-[#f4efe6] dark:bg-[#c89d54] dark:text-[#16120e] transition"
-            : "cat-btn px-3.5 py-2 rounded-lg text-xs font-medium theme-surface border hover:border-[#c89d54] transition";
+            ? "cat-btn shrink-0 whitespace-nowrap px-3.5 py-2 rounded-lg text-xs font-semibold bg-[#1c1613] text-[#f4efe6] dark:bg-[#c89d54] dark:text-[#16120e] transition"
+            : "cat-btn shrink-0 whitespace-nowrap px-3.5 py-2 rounded-lg text-xs font-medium theme-surface border hover:border-[#c89d54] transition";
         });
         renderMenuGrid();
       });
