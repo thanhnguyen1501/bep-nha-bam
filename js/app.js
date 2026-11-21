@@ -719,36 +719,7 @@
       grid.innerHTML = filtered.map((item, idx) => {
         const qtyInCart = state.cart[item.id] || 0;
         return `
-          <article class="bam-dish-card shadow-sm hover:shadow-lg">
-            <div>
-              <div class="relative aspect-[4/3] w-full overflow-hidden bg-stone-900">
-                <img src="${item.image}" loading="lazy" alt="${item.name}" class="w-full h-full object-cover transition duration-500 hover:scale-105 cursor-pointer" data-action="lightbox" data-id="${item.id}" />
-                <div class="absolute bottom-2.5 right-2.5 px-3 py-1 rounded-md bg-[#16120e]/90 border border-[#c89d54]/50 text-[#f4efe6] font-editorial text-xl font-bold shadow">
-                  ${formatVND(item.price)} <span class="text-xs font-sans font-normal text-[#c89d54]">/ ${item.unit}</span>
-                </div>
-              </div>
-
-              <div class="p-4 sm:p-5 space-y-1.5">
-                <div class="text-[11px] theme-text-muted">${item.categoryLabel}</div>
-                <h3 class="font-editorial text-2xl font-bold leading-snug">${item.name}</h3>
-                <p class="text-xs sm:text-sm theme-text-muted leading-relaxed">${item.shortDesc}</p>
-              </div>
-            </div>
-
-            <div class="px-4 sm:px-5 pb-4 sm:pb-5 pt-2">
-              ${qtyInCart > 0 ? `
-                <div class="flex items-center justify-between gap-2 p-1 rounded-lg theme-surface border">
-                  <button type="button" data-action="dec-cart" data-id="${item.id}" class="w-9 h-9 rounded-md theme-card border font-bold text-sm">−</button>
-                  <span class="text-xs font-bold">${qtyInCart} ${item.unit} trong giỏ</span>
-                  <button type="button" data-action="inc-cart" data-id="${item.id}" class="w-9 h-9 rounded-md bg-[#b84a27] text-white font-bold text-sm">+</button>
-                </div>
-              ` : `
-                <button type="button" data-action="inc-cart" data-id="${item.id}" class="w-full py-2.5 rounded-lg bg-[#1c1613] hover:bg-[#b84a27] text-[#f4efe6] dark:bg-[#c89d54] dark:text-[#16120e] dark:hover:bg-[#d8b068] text-xs font-semibold transition">
-                  Thêm vào giỏ
-                </button>
-              `}
-            </div>
-          </article>
+          <article class="bam-dish-card shadow-sm hover:shadow-lg flex flex-row sm:flex-col gap-3 sm:gap-0 p-3 sm:p-0"><div class="relative w-24 h-24 sm:w-full sm:h-48 shrink-0 rounded-xl sm:rounded-none overflow-hidden bg-stone-900"><img src="${item.image}" loading="lazy" alt="${item.name}" class="w-full h-full object-cover transition duration-500 hover:scale-105 cursor-pointer" data-action="lightbox" data-id="${item.id}" /><div class="hidden sm:block absolute bottom-2.5 right-2.5 px-3 py-1 rounded-md bg-[#16120e]/90 border border-[#c89d54]/50 text-[#f4efe6] font-editorial text-xl font-bold shadow">${formatVND(item.price)} <span class="text-xs font-sans font-normal text-[#c89d54]">/ ${item.unit}</span></div></div><div class="flex-1 min-w-0 flex flex-col justify-between sm:p-4"><div class="space-y-1"><div class="text-[11px] theme-text-muted">${item.categoryLabel}</div><h3 class="font-editorial text-lg sm:text-2xl font-bold leading-snug truncate sm:whitespace-normal">${item.name}</h3><p class="text-xs sm:text-sm theme-text-muted leading-relaxed line-clamp-2">${item.shortDesc}</p></div><div class="mt-2 sm:mt-4 flex sm:block items-center justify-between gap-2"><div class="sm:hidden font-editorial text-base font-bold text-[#b84a27] dark:text-[#c89d54] shrink-0">${formatVND(item.price)}<span class="text-[11px] font-sans font-normal theme-text-muted">/${item.unit}</span></div>${qtyInCart > 0 ? `<div class="flex items-center justify-between gap-2 p-1 rounded-lg theme-surface border"><button type="button" data-action="dec-cart" data-id="${item.id}" class="w-8 h-8 sm:w-9 sm:h-9 rounded-md theme-card border font-bold text-sm">-</button><span class="text-xs font-bold whitespace-nowrap">${qtyInCart}<span class="hidden sm:inline"> ${item.unit} trong giỏ</span></span><button type="button" data-action="inc-cart" data-id="${item.id}" class="w-8 h-8 sm:w-9 sm:h-9 rounded-md bg-[#b84a27] text-white font-bold text-sm">+</button></div>` : `<button type="button" data-action="inc-cart" data-id="${item.id}" class="px-3 py-1.5 sm:w-full sm:py-2.5 rounded-lg bg-[#1c1613] hover:bg-[#b84a27] text-[#f4efe6] dark:bg-[#c89d54] dark:text-[#16120e] dark:hover:bg-[#d8b068] text-xs font-semibold transition shrink-0"><span class="sm:hidden">+ Thêm</span><span class="hidden sm:inline">Thêm vào giỏ</span></button>`}</div></div></article>
         `;
       }).join("");
     }
